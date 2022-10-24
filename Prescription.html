@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title> chest </title>
+    <meta charset="utf-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="layout.css" rel="stylesheet" type="text/css" media="all">
+    <link href="main.css" rel="stylesheet" type="text/css" media="all">
+
+</head>
+
+<body id="top">
+
+    <div class="wrapper overlay row0 " style="background-color: rgb(120, 204, 204);">
+        <div id="topbar" class="hoc clear">
+            <div class="fl_left" style=" font-family: 'Times New Roman', Times, serif; font-size: small;">
+                <ul class="nospace">
+                    <li><i class="fa-solid fa-phone a"></i> 02 279 415 06 </li>
+
+                    <li class="b"><a class="fa-regular fa-envelope a " href="https://www.mohp.gov.eg/"
+                            target="_blank"></a>
+                        mohp.gov.eg </li>
+
+                </ul>
+            </div>
+            <div class="fl_right">
+                <ul class="nospace">
+                    <li class="mx-4"><a href="{% url 'machine' %}" title="X-Ray Page "><i
+                                class="fa-solid fa-skull-crossbones"></i></a></li>
+                    <li class="mx-4"><a href="{% url 'form' %}" title="Form Page "><i
+                                class="fa-brands fa-wpforms"></i></a></li>
+                    <li class="mx-4"><a href="{% url 'prescription' %}" title="prescription"><i
+                                class="fas fa-edit"></i></a></li>
+
+
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="wrapper row1" id="myDIV">
+        <header id="header" class="hoc clear">
+            <div id="logo" class="fl_left">
+                <h1 class="logoname"><a href="{% url 'index' %}">CH<span>est Diseases </span></a></h1>
+            </div>
+            <nav id="mainav" class="fl_right">
+                <ul class="clear"
+                    style="color: rgb(51, 49, 53); font-family:'Proxima Nova','Proxima Nova Fallback',sans-serif; ">
+                    <li class="active"><a href="{% url 'index' %}">Home</a></li>
+
+                    <li><a href="{% url 'form' %}"> Symptoms </a>
+
+                    </li>
+                    <li><a href="{% url 'machine' %}"> X-Ray</a></li>
+
+                    <li><a href="{% url 'prescription' %}"> Prescription </a>
+
+                    </li>
+
+
+                </ul>
+            </nav>
+        </header>
+    </div>
+    </div>
+    <div id="drugs " class="main  ">
+        <div class="border">
+            <br>
+            <h1 class="head"> Generate Prescription </h1> <br>
+            <h3 class="head2">Who are you?</h3>
+            <form class="was-validated">
+                <div class="parts">
+                    <div class="line form-floating mb-5 pt-1">
+                        <input type="text" class="fox form-control" id="DrName" name="DrName" placeholder=" " required
+                            autofocus />
+                        <label for="DrName"> DR Name * </label>
+                    </div>
+                    <div class="row mb-5">
+                        <div class="left form-floating pt-1">
+                            <input type="text" class="fox form-control" id="Address" name="Address" placeholder=" "
+                                required />
+                            <label for="Address">Address *</label>
+                        </div>
+                        <div class="right form-floating pt-1">
+                            <input type="text" class="fox form-control" id="Mobile" name="Mobile" placeholder=" " />
+                            <label for="Mobile">Mobile No.</label>
+                        </div>
+                    </div>
+                    <div class="line form-floating mb-5 pt-1">
+                        <input type="text" class="fox form-control" id="Qualifications" name="Qualifications"
+                            placeholder=" " required />
+                        <label for="Qualifications">Qualifications</label>
+                    </div>
+                    <h1 class="head3">Patient Details</h1>
+                    <div class="row mb-5">
+                        <div class="left form-floating pt-1">
+                            <input type="text" class="fox form-control" id="PatientName" name="PatientName"
+                                placeholder=" " required />
+                            <label for="PatientName">Patient's Name *</label>
+                        </div>
+                        <div class="right form-floating pt-1">
+                            <input type="Number" class="fox form-control" id="Age" name="Age" placeholder=" " min="1"
+                                max="100" />
+                            <label for="Age">Age </label>
+                        </div>
+                    </div>
+                    <div class="row mb-5">
+
+                        <div class="left form-floating pt-1  ">
+                            <input list="data_dia" class="fox form-control " id="Diagnosis">
+
+                            <datalist name="Diagnosis" placeholder=" " required id="data_dia">
+                                <option value="" selected disabled></option>
+                                <option value="Pleurisy">Pleurisy</option>
+                                <option value="pleural effusion">pleural effusion</option>
+                                <option value="Pneumothorax">Pneumothorax</option>
+                                <option value="Empyema">Empyema</option>
+                                <option value="COPD">COPD</option>
+                                <option value="Bronchial asthma">Bronchial asthma</option>
+                                <option value="Bronchiectasis">Bronchiectasis</option>
+                                <option value="Cystic fibrosis">Cystic fibrosis</option>
+
+                                <option value="Lung Abscess">Lung Abscess</option>
+                                <option value="IPF">IPF</option>
+                                <option value="Pneumonia">Pneumonia</option>
+                                <option value="TB">TB</option>
+                                <option value="Sarcoidosis">Sarcoidosis</option>
+
+                            </datalist>
+                            <label for="Diagnosis" style="font-size: 20px ; color: rgb(56, 56, 56);">Diagnosis </label>
+
+                        </div>
+                        <div class="right form-floating pt-1">
+                            <input type="text" class="fox form-control" id="Examinations" name="Examinations"
+                                placeholder=" " />
+                            <label for="Examinations">Examinations and investigation </label>
+                        </div>
+                    </div>
+                    <div class="line form-floating mb-5 pt-1">
+                        <textarea class="fox form-control" id="others" name="others" placeholder=" "></textarea>
+                        <label for="date">Other instructions</label>
+                    </div>
+                </div>
+            </form>
+            <div class="container mb-5  part7 ">
+                <button class="button button4" data-bs-toggle="modal" data-bs-target="#myModal"> Add Drugs
+                </button>
+                <button class="button button5" data-bs-toggle="modal" data-bs-target="#myModal2"
+                    onclick="myFunction()">Prescription</button>
+            </div>
+            <div id="part4">
+                <ul class="part4" id="co">
+                </ul>
+            </div>
+        </div>
+        <form name="theForm" onsubmit="return false">
+            <div class="modal fade p-3" id="myModal">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title"> Add Drugs </h4>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+                        <div class="modal-body nm ">
+                            <form class="p-3 was-validated">
+                                <div class="form-floating pt-1 mb-3 ">
+                                    <input type="text" id="DrugN" name="DrugN" class="form-control" placeholder=" "
+                                        required autofocus />
+                                    <label for="DrugN">Drug Name</label>
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="left_modal form-floating pt-1">
+                                        <input type="number" id="Strength" name="Strength" class="form-control"
+                                            placeholder=" " />
+                                        <label for="Strength">Strength</label>
+                                    </div>
+                                    <div class="right_modal form-floating pt-1">
+                                        <select name="Strengthunit" id="Strengthunit" class="form-control "
+                                            placeholder=" ">
+                                            <option value="" selected disabled></option>
+                                            <option value="mg">mg</option>
+                                            <option value="gm">gm</option>
+                                            <option value="ng">ng</option>
+                                            <option value="mcg">mcg</option>
+                                        </select>
+                                        <label for="Strengthunit">Unit</label>
+                                    </div>
+                                </div>
+                                <div class="form-floating pt-1 mb-3 ">
+                                    <select id="pre" name="pre" class="form-control" placeholder=" ">
+                                        <option value="" selected disabled>Preparation</option>
+                                        <option value="Tab.">Tab.</option>
+                                        <option value="Cap.">Cap.</option>
+                                        <option value="Inj.">Inj.</option>
+                                        <option value="Syr">Syr</option>
+                                    </select>
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="left_modal form-floating pt-1">
+                                        <input type="number" id="Dose" name="Dose" class="form-control "
+                                            placeholder=" " />
+                                        <label for="Dose">Dose</label>
+                                    </div>
+                                    <div class="right_modal form-floating pt-1" id="drop">
+                                        <select name="doseunit" class="form-control " id="doseunit">
+                                            <option value="" selected disabled></option>
+                                            <option value="ml">ml</option>
+                                            <option value="Tea Spoon">Tea Spoon</option>
+                                            <option value="Table Spoon">Table Spoon</option>
+                                        </select>
+                                        <label for="Strengthunit">Unit</label>
+                                    </div>
+                                </div>
+                                <div class="form-floating pt-1 mb-3 ">
+                                    <input type="text" id="freq" name="freq" class="form-control" placeholder=" " />
+                                    <label for="freq">Frequancy</label>
+                                </div>
+                                <div class="form-floating mb-5">
+                                    <select name="route" class="form-control" id="route">
+                                        <option value="" disabled selected>Route</option>
+                                        <option value="oral">oral </option>
+                                        <option value="Ear Drops">Ear Drops</option>
+                                        <option value="Eye Drops">Eye Drops</option>
+                                    </select>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer ">
+                            <input class="btn " id="submit" onclick="Drugs()" value="OK" type="submit" disabled />
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <div class="modal" id="myModal2">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body fin p-5">
+                        <div class="mod_head p-3">
+                            <h4 class="modal-title left font bold">DR. <span id="doc_name"></span> </h4>
+                            <h4 class="modal-title font " id="doc_qual"> </h4>
+                        </div>
+                        <hr>
+                        <div class="p-3">
+                            <div class="row mb-2">
+                                <h4 class="modal-title left font bold">Patient's Name: <span class="spann"
+                                        id="pat_name"></span> </h4>
+                                <h4 class="modal-title right font bold">Age: <span class="spann" id="pat_age"></span>
+                                </h4>
+                            </div>
+                            <h4 class="font bold">Date: <span id="mod_date" class="spann"></span></h4>
+                        </div>
+                        <div class="innfoo border p-3">
+                            <div class="row ">
+                                <h4 class="dia left font bold">Diagnosis : <span id="diag" class="spann"></span></h4>
+                                <h4 class="dia right font bold">Investigation : <span id="inves" class="spann"></span>
+                                </h4>
+                            </div>
+                            <hr class="mt-0">
+                            <h4> <span class="rx font bold">RX </span> </h4>
+                            <ul class="med">
+                            </ul>
+                            <h4 class="font bold">Other instructions: <span id="ins" class="spann"></span></h4>
+                        </div>
+                        <hr>
+                        <div class="mod_foot m-0 p-3">
+                            <h4 id="doc_add" class="center font"></h4>
+                            <h4 class="center font bold">Mobile No: <span id="doc_mob"> </span> </h4>
+                        </div>
+                    </div>
+                    <div class="modal-footer ">
+                        <button class="btn btn9" onclick="window.print()">Print </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/c89f2275fd.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+</body>
+
+</html>
